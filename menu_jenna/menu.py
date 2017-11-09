@@ -9,7 +9,7 @@ def main():
     choice = 0
     while choice != QUIT_CHOICE:
         display_menu()
-        choice = input("Enter your decision: ")
+        choice = float(input("Enter your decision: "))
         output = handle_choice(choice)
         print(output)
 
@@ -24,11 +24,13 @@ def display_menu():
 
 def handle_choice(choice):
     if choice == WHO:
-        queen = str(input("Would you like to be Beyonce? Answer Y for yes and N for no. "))
-        if queen.upper() == 'Y':
+        queen = str(input("Would you like to be Beyonce? "))
+        if queen in ['y', 'yes', 'Y', 'Yes']:
             return "I am Beyonce. Always. "
-        elif queen.upper() == 'N':
+        elif queen in ['n', 'N', 'No', 'no']:
             return "Good. " + "I am Beyonce. Always. "
+        else:
+            return "Error: Invalid Entry"
     elif choice == WHAT:
         life = int(input("Would you rather be a 10 or a 42?"))
         if life == 10:
@@ -37,18 +39,29 @@ def handle_choice(choice):
                 return "Jim 'What bear is best?'" + " Dwight 'That’s a ridiculous question.' "+ " Jim 'False. Black Bear.' " + " Dwight 'That’s debatable. There are basically two schools of thought–' " + " Jim 'Fact. Bears eat beets. Bears. Beets. Battlestar Galactica.'"
             elif bears.upper() == 'N':
                 return "That's no fun. I guess you don't like bears"
+            else:
+                return "That entry isn't valid you litle plop. "
         elif life == 42:
             return "You are the answer to life, the universe, and everything"
+        else:
+            return "You need to get it together, you little Flapjack Palmdale. That entry isn't valid. "
     elif choice == WHERE:
-        return "WHERE ARE THE TURTLES?!"
+        turtles= input("Do you like turtles? ")
+        if turtles in ['y', 'yes', 'Y', 'Yes']:
+            return "WHERE ARE THE TURTLES?!"
+        elif turtles in ['n', 'N', 'No', 'no']:
+            return "You are wrong. Turtles are great and need more love and attention. "
+        else:
+            return "That isn't valid you oatmeal raisin cookie. "
     elif choice == WHEN_LOVE:
         return "Do I want to be feared or loved? Um... easy, both. I want people to be afraid of how much they love me."
     elif choice == WHY:
         return "Well Happy Birthday, Jesus. Sorry your party's so lame."
     elif choice == QUIT_CHOICE:
         return "Exiting the Matrix..."
-    elif choice != WHO or WHAT or WHERE  or WHEN_LOVE or WHY or QUIT_CHOICE:
-        return "Error: Invalid entry. Get it together. "
+    else:
+        return "Nope. That entry is invalid"
+
 
 
 main()
