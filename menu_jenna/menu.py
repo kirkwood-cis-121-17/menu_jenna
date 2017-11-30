@@ -89,9 +89,9 @@ def handle_when():
     if cookies in ['y', 'yes', 'Y', 'Yes']:
         return "What is wrong with you? "
     elif cookies in ['n', 'N', 'No', 'no']: 
-        #INSERT A QUESTION HERE TO GET TO THE FEAR/ LOVE THING
-        
-        return "Do I want to be feared or loved? Um... easy, both. I want people to be afraid of how much they love me."
+        return " Good. You are a person. Here's an Office quote." + "Do I want to be feared or loved? Um... easy, both. I want people to be afraid of how much they love me."
+    else:
+        return " That entry isn't valid famss"
 
 def handle_why():
     birthday = input("Is it your birthday today?")
@@ -107,6 +107,8 @@ def handle_why():
             return "Well thats no fun. You don't get birthday cake, but you go live your life like it's your birthday. "
         else:
             return "That isn't a valid entry. Please try again."
+    else:
+        return "That entry isn't valid, try again. "
 
 
 def jesus():
@@ -121,7 +123,7 @@ def jesus():
 def advice():
     advice_please = input("Would you like to hear some advice? ")
     if advice_please in ['y', 'yes', 'Y', 'Yes']:
-        select_person = input("Would you like to hear advice from Bill Nye, Michael Scott or ")
+        select_person = input("Would you like to hear advice from Bill Nye or Michael Scott? ")
         if select_person in ['nye', 'bill', 'Bill', 'Nye', 'Bill Nye', 'Bill nye', 'bill Nye', 'The Science Guy', 'Bill Nye the Science Guy']:
             return "My father and mother emphasized two things: Every person is responsible for his or her own actions, and, to the best of your ability, leave the world better than you found it." + \
             "That's why I say that sometimes you've got to pick up other people's trash. Just because somebody else filled the atmosphere with carbon dioxide is no reason not to address the problem." + \
@@ -130,9 +132,9 @@ def advice():
             return "It's never to early for ice cream" + "-Michael Scott"
         else:
             return "That is not a person you can chose. Try again."
-        
+    elif advice_please in ['n', 'N', 'No', 'no']:
+        return 'Well, why did you pick this one then?'
+    else:
+        return "That wasn't a valid option. Try again. "
 
 main()
-
-
-#Finish the advice, why, and when
