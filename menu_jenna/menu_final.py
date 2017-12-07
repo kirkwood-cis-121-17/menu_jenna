@@ -1,18 +1,19 @@
 QUIT_CHOICE = 6
 def main():
-    choice = 0
-    while choice != QUIT_CHOICE:
-        DUMP_TRUCKS = 1
-        BLENDERS= 2
-        TOILETS = 3
-        NORTH_POLE = 4
-        BIRTHDAYS= 5
-        display_menu()
-        choice = float(input("Enter your decision: "))
-        output = handle_choice(choice)
-        print(output)
-        print("All information comes from Wikipedia. You're welcome. ")
-
+    try:
+        choice = 0
+        while choice != QUIT_CHOICE:
+            DUMP_TRUCKS = 1
+            BLENDERS= 2
+            TOILETS = 3
+            NORTH_POLE = 4
+            BIRTHDAYS= 5
+            display_menu()
+            choice = float(input("Enter your decision: "))
+            output = handle_choice(choice)
+            print(output)
+    except ValueError:
+        print("That's not an option. Start over. ")
 
 def display_menu():
     print("MENU")
@@ -148,13 +149,13 @@ def blenders_menu():
     main_blenders()
 
 def blenders_history():
-    return "They came into being"
+    return "They came into being. Fight me. "
 def blenders_dangers():
     return "They can break down your food and your hand"
 def blenders_types():
     return "Regular or small"
 def blenders_movies():
-    return "In movies people keep sticking their hands in blenders"
+    return "In movies people keep sticking their hands in blenders. Cause that's good for your health. "
 
 def toilets_menu():
     HISTORY = 1
@@ -200,13 +201,13 @@ def toilets_menu():
     main_toilets()
 
 def toilets_history():
-    return "OUthouse to turlet"
+    return "Anywhere turns into outhouse. " + "Outhouse turns into toilet"
 def toilets_dangers():
     return "You can get stuck"
 def toilets_types():
-    return "Toilets"
+    return "Toilets that work and those that don't"
 def toilets_movies():
-    return " Poeple go potty"
+    return " The first time a toilet was filmed flushing was in 'Psycho'"
     
 
 def north_pole_menu():
@@ -253,11 +254,11 @@ def north_pole_menu():
     main_north_pole()
 
 def north_pole_history():
-    return "Santa moved there and explorers die"
+    return "Santa moved there and explorers died trying to explore"
 def north_pole_dangers():
-    return "Reindeer????"
+    return "Reindeer????" + "Bears????" + "Hypothermia???"
 def north_pole_creatures():
-    return "Bears"
+    return "Bears????" + "Fact. Bears eat beets. Bears. Beets. Battlestar Galactica"
 def north_pole_movies():
     return "Every Christmas Movie Ever"
     
@@ -306,11 +307,11 @@ def birthdays_menu():
     main_birthdays()
 
 def birthdays_history():
-    return "They happen once a year for everybody"
+    return "They happen once a year for everybod.y"
 def birthdays_dangers():
     return "You are aging. Therefore you are dying."
 def birthdays_types():
-    return " Feliz Cumpleaños"
+    return " Feliz Cumpleaños" + "Happy Birthday" + "Congrats on leveling up in life!" + "Bon anniversaire"
 def birthdays_movies():
     return "Sixteen Candles, Happy Death Day"
 
